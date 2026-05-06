@@ -1,0 +1,85 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Display:wght@600&display=swap');
+
+:root {
+  /* Colors */
+  --color-heading: #161a20;
+  --color-body: #38404a;
+  --color-caption: #687384;
+  --color-border: #c8d0da;
+  --color-surface: #ffffff;
+  --color-primary: #0078c8;
+
+  /* Typography */
+  --font-display: 'Inter Display', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-3xs: 4px;
+  --spacing-xs: 12px;
+  --spacing-sm: 16px;
+  --spacing-md: 20px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 56px;
+
+  /* Border */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* Alias — match Figma variable names used in generated code */
+  --tipography\/font-family\/display: var(--font-display);
+  --tipography\/size\/l: 32px;
+  --tipography\/line-height\/l: 36px;
+  --alias\/typescale\/fontfamily\/body\/long: var(--font-body);
+  --alias\/typescale\/fontsize\/body\/small: 14px;
+  --alias\/typescale\/letterspacing\/body\/long: 0px;
+  --font\/size\/body\/short: 16px;
+  --font\/size\/button\/small: 14px;
+  --font\/family\/body\/small: var(--font-body);
+  --font\/family\/button\/default: var(--font-body);
+  --font\/weight\/regular: 400;
+  --font\/weight\/medium: 500;
+  --font\/weight\/semibold: 600;
+  --font\/letterspacing\/body\/small: 0px;
+  --spacing\/3xs: var(--spacing-3xs);
+  --spacing\/xs: var(--spacing-xs);
+  --spacing\/sm: var(--spacing-sm);
+  --spacing\/lg: var(--spacing-lg);
+  --border\/width\/xs: 1px;
+  --border\/radius\/lg: var(--radius-lg);
+  --border\/default: var(--color-border);
+  --surface\/neutral\/light: var(--color-surface);
+  --text\/default\/heading: var(--color-heading);
+  --text\/default\/body: var(--color-body);
+  --text\/default\/caption: var(--color-caption);
+  --color\/black-and-white\/white: #ffffff;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 1366px;
+  height: 768px;
+  overflow: hidden;
+  position: relative;
+  background: white;
+  flex-shrink: 0;
+}
