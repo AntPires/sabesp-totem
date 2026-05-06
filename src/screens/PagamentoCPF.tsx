@@ -3,6 +3,7 @@ import { useState, useRef } from 'react';
 type ErrorType = 'invalid' | 'not-found' | 'no-supply' | null;
 
 interface PagamentoCPFProps {
+  navTitle?: string;
   onBack: () => void;
   onContinue: (cpf: string) => void;
 }
@@ -36,7 +37,7 @@ function mockValidate(cpf: string): Promise<ErrorType> {
   );
 }
 
-export default function PagamentoCPF({ onBack, onContinue }: PagamentoCPFProps) {
+export default function PagamentoCPF({ navTitle = 'Pagamento de Faturas', onBack, onContinue }: PagamentoCPFProps) {
   const [digits, setDigits] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<ErrorType>(null);
@@ -84,7 +85,7 @@ export default function PagamentoCPF({ onBack, onContinue }: PagamentoCPFProps) 
               <path d="M15 18l-6-6 6-6" stroke="#38404a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </button>
-          <span className="text-[16px] font-semibold text-[#687384]">Pagamento de Faturas</span>
+          <span className="text-[16px] font-semibold text-[#687384]">{navTitle}</span>
           <button
             onClick={onBack}
             className="flex items-center justify-center w-16 h-16 bg-[#f0f3f7] rounded-full hover:bg-[#e4e8ef] transition-colors"
