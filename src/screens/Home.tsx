@@ -4,22 +4,24 @@ interface HomeProps {
   onNavigate: (screen: Screen) => void;
 }
 
+const base = import.meta.env.BASE_URL;
+
 const services = [
   {
     id: 'pagamento' as Screen,
-    icon: '/assets/icon-pagamento.svg',
+    icon: `${base}assets/icon-pagamento.svg`,
     label: 'Pagar Faturas',
     description: 'Pague direto pelo totem',
   },
   {
     id: 'segunda-via' as Screen,
-    icon: '/assets/icon-segunda-via.svg',
+    icon: `${base}assets/icon-segunda-via.svg`,
     label: 'Segunda Via',
     description: 'Imprima suas faturas',
   },
   {
     id: 'titularidade' as Screen,
-    icon: '/assets/icon-titularidade.svg',
+    icon: `${base}assets/icon-titularidade.svg`,
     label: 'Mudança de titularidade',
     description: 'Transferência do fornecimento',
   },
@@ -32,7 +34,7 @@ export default function Home({ onNavigate }: HomeProps) {
       <div className="flex flex-col items-center justify-between w-[695px] h-full px-[80px] py-[56px]">
         <div className="flex flex-col items-center gap-8 w-full max-w-[352px]">
           {/* Logo */}
-          <img src="/assets/logosabesp.svg" alt="Sabesp" className="h-9 object-contain" />
+          <img src={`${base}assets/logosabesp.svg`} alt="Sabesp" className="h-9 object-contain" />
 
           {/* Heading */}
           <div className="flex flex-col gap-2 text-center w-full">
@@ -66,7 +68,7 @@ export default function Home({ onNavigate }: HomeProps) {
                     {service.description}
                   </span>
                 </div>
-                <img src="/assets/icon-chevron.svg" alt="" className="shrink-0 w-6 h-6" />
+                <img src={`${base}assets/icon-chevron.svg`} alt="" className="shrink-0 w-6 h-6" />
               </div>
             </button>
           ))}
@@ -83,7 +85,7 @@ export default function Home({ onNavigate }: HomeProps) {
       {/* Right panel — illustration */}
       <div className="flex-1 h-full overflow-hidden">
         <img
-          src="/assets/illustration-home.png"
+          src={`${base}assets/illustration-home.png`}
           alt=""
           className="w-full h-full object-cover object-left"
         />
