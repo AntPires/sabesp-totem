@@ -4,6 +4,7 @@ type ErrorType = 'invalid' | 'not-found' | 'no-supply' | null;
 
 interface PagamentoCPFProps {
   navTitle?: string;
+  heading?: string;
   onBack: () => void;
   onContinue: (cpf: string) => void;
 }
@@ -37,7 +38,7 @@ function mockValidate(cpf: string): Promise<ErrorType> {
   );
 }
 
-export default function PagamentoCPF({ navTitle = 'Pagamento de Faturas', onBack, onContinue }: PagamentoCPFProps) {
+export default function PagamentoCPF({ navTitle = 'Pagamento de Faturas', heading, onBack, onContinue }: PagamentoCPFProps) {
   const [digits, setDigits] = useState<string[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<ErrorType>(null);
@@ -102,7 +103,7 @@ export default function PagamentoCPF({ navTitle = 'Pagamento de Faturas', onBack
             className="text-[24px] font-semibold leading-[1.2] text-[#161a20] text-center w-full"
             style={{ fontFamily: "'Inter Display', sans-serif" }}
           >
-            {error ? 'Digite o CPF do titular' : 'Para começar, digite o CPF do titular'}
+            {heading ?? (error ? 'Digite o CPF do titular' : 'Para começar, digite o CPF do titular')}
           </h2>
 
           <div className="flex flex-col gap-6 items-end w-full">
